@@ -2363,6 +2363,9 @@ LRESULT CALLBACK ClientConnection::WndProc(HWND hwnd, UINT iMsg,
 		}
 
 	case WM_KEYDOWN:
+		if (wParam == VK_PROCESSKEY) {
+			wParam = ImmGetVirtualKey(hwnd); // 0x15 // gon - TranslateMessage() 는 호출하지 않아야 작동함
+		}
 	case WM_KEYUP:
 	case WM_SYSKEYDOWN:
 	case WM_SYSKEYUP:

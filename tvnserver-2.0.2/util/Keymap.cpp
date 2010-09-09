@@ -31,6 +31,7 @@
 
 #define XK_MISCELLANY
 #define XK_CYRILLIC
+#define XK_KOREAN	// gon
 
 #include "rfb/keysymdef.h"
 
@@ -140,6 +141,14 @@ const KS2VKEntry SERVER_AUXILIARY_TRANSLATE_TABLE[] = {
   { XK_F24, VK_F24 },
   { XK_Super_L, VK_LWIN },
   { XK_Super_R, VK_RWIN },
+
+  { XK_Kanji,		VK_KANJI },
+  { XK_Kana_Shift,	VK_KANA },
+#ifdef XK_KOREAN
+  { XK_Hangul,		VK_HANGUL },	// gon
+  { XK_Hangul_Hanja, VK_HANJA },
+#endif
+
   { XK_Menu, VK_APPS }
 };
 
@@ -219,6 +228,14 @@ const VK2KSEntry VIEWER_AUXILIARY_TRANSLATE_TABLE[] = {
   { VK_F24,       XK_F24 },
   { VK_LWIN,      XK_Super_L },
   { VK_RWIN,      XK_Super_R },
+
+  { VK_KANJI,		XK_Kanji },
+  { VK_KANA,		XK_Kana_Shift},
+#ifdef XK_KOREAN	// gon
+  { VK_HANGUL,		XK_Hangul},
+  { VK_HANJA,		XK_Hangul_Hanja},
+#endif
+
   { VK_APPS,      XK_Menu }
 };
 

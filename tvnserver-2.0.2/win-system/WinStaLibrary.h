@@ -37,7 +37,7 @@ public:
   WinStaLibrary();
   virtual ~WinStaLibrary();
 
-  BOOL WinStationConnectW(HANDLE server, ULONG ñonnectSessionId,
+  BOOL WinStationConnectW(HANDLE server, ULONG connectSessionId,
                           ULONG activeSessionId, PCWSTR password,
                           ULONG unknown);
 

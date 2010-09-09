@@ -81,7 +81,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 			if ( !hotkeys.TranslateAccel(&msg) &&
 				 !help.TranslateMsg(&msg) &&
 				 !app.ProcessDialogMessage(&msg) ) {
-				TranslateMessage(&msg);
+				TranslateMessage(&msg);	// gon
 				DispatchMessage(&msg);
 			}
 		}
