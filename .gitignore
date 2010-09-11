@@ -1,0 +1,17 @@
+.svn
+
+# vc 관련
+*.vcproj.7.10.old
+*.sln.old
+*.user
+Debug
+Release
+ReleaseNoUnicode
+DebugNoUnicode
+*.ncb
+*.aps
+_UpgradeReport_Files
+UpgradeLog.XML
+*.suo
+messages.res
+MSG00001.bin
