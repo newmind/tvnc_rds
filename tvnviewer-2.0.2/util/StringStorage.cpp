@@ -480,7 +480,8 @@ void StringStorage::format(const TCHAR *format, ...)
 
 void StringStorage::operator= (const StringStorage &other)
 {
-  setString(other.getString());
+  if (this != &other)
+    setString(other.getString());
 }
 
 bool StringStorage::operator == (const StringStorage &str) const

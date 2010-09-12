@@ -83,7 +83,7 @@ void ControlClient::execute()
       UINT32 messageId = m_gate->readUInt32();
       UINT32 messageSize = m_gate->readUInt32();
 
-      Log::info(_T("Recieved %d control message with %d size"), messageId, messageSize);
+//      Log::info(_T("Recieved %d control message with %d size"), messageId, messageSize);
 
       bool requiresControlAuth = false;
 
@@ -98,7 +98,7 @@ void ControlClient::execute()
 
       try {
         if (requiresControlAuth && !m_authPassed) {
-          Log::info(_T("Message requires control authentication"));
+//          Log::info(_T("Message requires control authentication"));
 
           m_gate->skipBytes(messageSize);
           m_gate->writeUInt32(ControlProto::REPLY_AUTH_NEEDED);
@@ -128,11 +128,11 @@ void ControlClient::execute()
           addClientMsgRcvd();
           break;
         case ControlProto::GET_SERVER_INFO_MSG_ID:
-          Log::info(_T("Get server info command requested"));
+//          Log::info(_T("Get server info command requested"));
           getServerInfoMsgRcvd();
           break;
         case ControlProto::GET_CLIENT_LIST_MSG_ID:
-          Log::info(_T("Get client list command requested"));
+//          Log::info(_T("Get client list command requested"));
           getClientsListMsgRcvd();
           break;
         case ControlProto::SET_CONFIG_MSG_ID:
@@ -140,11 +140,11 @@ void ControlClient::execute()
           setServerConfigMsgRcvd();
           break;
         case ControlProto::GET_CONFIG_MSG_ID:
-          Log::message(_T("Get server config message requested"));
+//          Log::message(_T("Get server config message requested"));
           getServerConfigMsgRcvd();
           break;
         case ControlProto::GET_SHOW_TRAY_ICON_FLAG:
-          Log::message(_T("Get run tvncontrol flag message requested"));
+//          Log::message(_T("Get run tvncontrol flag message requested"));
           getShowTrayIconFlagMsgRcvd();
           break;
         case ControlProto::UPDATE_TVNCONTROL_PROCESS_ID_MSG_ID:
